@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar style="color: orange;">
+  <ion-toolbar color="primary">
     <ion-title>
       Tutto
     </ion-title>
@@ -12,14 +12,14 @@
       <ion-col align-self-center offset-md="2" size-md="8" offset-lg="3.5" size-lg="5" size-xs="12">
         <ion-card>
           <ion-card-header class="ion-margin-top">
-            <ion-title class="ion-text-center">Login</ion-title>
+            <ion-title class="ion-text-center" color="dark">Login</ion-title>
           </ion-card-header>
           <ion-card-content>
             <form #form="ngForm" (ngSubmit)="login(form)">
               <ion-grid>
                 <ion-row color="primary">
                   <ion-col align-self-center>
-                    <ion-item class="ion-margin-vertical">
+                    <ion-item >
                       <ion-label position="floating">Username</ion-label>
                       <ion-input name="email" type="text" ngModel required></ion-input>
                     </ion-item>
