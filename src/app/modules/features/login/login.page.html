@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-title>
       Tutto
     </ion-title>
@@ -19,7 +19,7 @@
               <ion-grid>
                 <ion-row color="primary">
                   <ion-col align-self-center>
-                    <ion-item >
+                    <ion-item>
                       <ion-label position="floating">Username</ion-label>
                       <ion-input name="email" type="text" ngModel required></ion-input>
                     </ion-item>
@@ -28,12 +28,17 @@
                       <ion-input name="password" type="password" ngModel required></ion-input>
                     </ion-item>
                     <div class="ion-margin-vertical ion-text-center">
-                      <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">
-                        Login</ion-button>
+                      <ion-button type="submit" [disabled]="form.invalid" expand="block" routerLink="/home">
+                        Login
+                      </ion-button>
                     </div>
-                    <div class="ion-margin-vertical ion-text-center">
-                      <p class="ion-margin-vertical">New to the App?</p>
-                      <ion-button color="light" [routerLink]="['/register']">Sign Up Here</ion-button>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col class="ion-margin-top">
+                    <div class="ion-text-center">
+                      <p>New to the App?</p>
+                      <ion-button color="light" routerLink="/register">Sign Up Here</ion-button>
                     </div>
                   </ion-col>
                 </ion-row>

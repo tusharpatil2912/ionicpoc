@@ -4,12 +4,12 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #ff9238;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #3171e0;
-  --ion-color-primary-tint: #4c8dff;
+  --ion-color-primary-shade: #9a31e0;
+  --ion-color-primary-tint: #bd4cff;
 
   /** secondary **/
   --ion-color-secondary: #3dc2ff;
@@ -233,4 +233,9 @@
 
     --ion-card-background: #1e1e1e;
   }
+}
+
+.md ion-toolbar{
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-primary-contrast);
 }
