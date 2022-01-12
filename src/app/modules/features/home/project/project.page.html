@@ -5,11 +5,30 @@
     </ion-buttons>
     <ion-title>Project</ion-title>
     <ion-buttons slot="end">
-      <ion-button ><ion-icon name="add"></ion-icon></ion-button>
+      <ion-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-searchbar animated placeholder="Search Projects" showCancelButton="focus"></ion-searchbar>
+  <ion-list>
+    <ion-item detail>
+      <ion-card style="width: 100%;">
+        <ion-card-header>
+          <ion-card-subtitle># 1</ion-card-subtitle>
+          <ion-card-title>Project Title</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <ion-buttons>
+            <ion-button color="primary">Task Board</ion-button>
+            <ion-button color="primary">Settings</ion-button>
+          </ion-buttons>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>
