@@ -1,9 +1,45 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Home</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-split-pane contentId="main-content">
+  <ion-menu contentId="main-content" type="overlay" class="my-custom-menu">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Tutto</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list id="inbox-list">
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+          <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
+            routerLinkActive="selected">
+            <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+            <ion-label>{{ p.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="ion-text-center">
+              <ion-card>
+                <img [src]="imgSrc" width="150px" style="border-radius: 50%;"
+                  class="ion-margin-top" />
+                <ion-card-header>
+                  <ion-card-title>John Doe</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-text>Developer</ion-text>
+                  <ion-button expand="block" color="danger" (click)="signOut()">
+                    <ion-icon name="log-out" slot="start"></ion-icon>
+                    Sign Out
+                  </ion-button>
+                </ion-card-content>
 
-<ion-content>
+              </ion-card>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
-</ion-content>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-split-pane>

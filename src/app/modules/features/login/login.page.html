@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar style="color: orange;">
+  <ion-toolbar>
     <ion-title>
       Tutto
     </ion-title>
@@ -12,28 +12,33 @@
       <ion-col align-self-center offset-md="2" size-md="8" offset-lg="3.5" size-lg="5" size-xs="12">
         <ion-card>
           <ion-card-header class="ion-margin-top">
-            <ion-title class="ion-text-center">Login</ion-title>
+            <ion-title class="ion-text-center" color="dark">Login</ion-title>
           </ion-card-header>
           <ion-card-content>
-            <form #form="ngForm" (ngSubmit)="login(form)">
+            <form #form="ngForm">
               <ion-grid>
                 <ion-row color="primary">
                   <ion-col align-self-center>
-                    <ion-item class="ion-margin-vertical">
+                    <ion-item>
                       <ion-label position="floating">Username</ion-label>
-                      <ion-input name="email" type="text" ngModel required></ion-input>
+                      <ion-input name="userName" type="text" ngModel required></ion-input>
                     </ion-item>
                     <ion-item class="ion-margin-vertical">
                       <ion-label position="floating">Password</ion-label>
                       <ion-input name="password" type="password" ngModel required></ion-input>
                     </ion-item>
                     <div class="ion-margin-vertical ion-text-center">
-                      <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">
-                        Login</ion-button>
+                      <ion-button type="submit" [disabled]="form.invalid" expand="block" (click)="login(form)">
+                        Login
+                      </ion-button>
                     </div>
-                    <div class="ion-margin-vertical ion-text-center">
-                      <p class="ion-margin-vertical">New to the App?</p>
-                      <ion-button color="light" [routerLink]="['/register']">Sign Up Here</ion-button>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col class="ion-margin-top">
+                    <div class="ion-text-center">
+                      <p>New to the App?</p>
+                      <ion-button color="light" routerLink="/register">Sign Up Here</ion-button>
                     </div>
                   </ion-col>
                 </ion-row>
