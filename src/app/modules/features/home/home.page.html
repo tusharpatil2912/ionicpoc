@@ -20,14 +20,14 @@
           <ion-col>
             <div class="ion-text-center">
               <ion-card>
-                <img src="../../../../assets/icon/favicon.png" width="150px" style="border-radius: 50%;"
+                <img [src]="imgSrc" width="150px" style="border-radius: 50%;"
                   class="ion-margin-top" />
                 <ion-card-header>
                   <ion-card-title>John Doe</ion-card-title>
                 </ion-card-header>
                 <ion-card-content>
                   <ion-text>Developer</ion-text>
-                  <ion-button expand="block" color="danger" routerLink="/login">
+                  <ion-button expand="block" color="danger" (click)="signOut()">
                     <ion-icon name="log-out" slot="start"></ion-icon>
                     Sign Out
                   </ion-button>

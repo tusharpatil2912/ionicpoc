@@ -13,22 +13,67 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar animated placeholder="Search Projects" showCancelButton="focus"></ion-searchbar>
-  <ion-list>
-    <ion-item detail>
-      <ion-card style="width: 100%;">
-        <ion-card-header>
-          <ion-card-subtitle># 1</ion-card-subtitle>
-          <ion-card-title>Project Title</ion-card-title>
-        </ion-card-header>
-      
-        <ion-card-content>
-          <ion-buttons>
-            <ion-button color="primary">Task Board</ion-button>
-            <ion-button color="primary">Settings</ion-button>
-          </ion-buttons>
-        </ion-card-content>
-      </ion-card>
-    </ion-item>
+  <ion-searchbar animated placeholder="Search Projects" showCancelButton="focus" slot="fixed"></ion-searchbar>
+  <ion-list style="margin-top: 50px;">
+    <ion-item-sliding *ngFor="let project of projectList">
+      <ion-item lines="none">
+        <ion-card style="width: 100%;">
+          <ion-card-header>
+
+            <ion-accordion-group style="width: 100%;">
+              <ion-accordion value="colors">
+                <ion-item slot="header" lines="none">
+                  <ion-title>#{{project?.id}} {{project?.name}}</ion-title>
+                </ion-item>
+
+                <ion-list slot="content">
+                  <ion-item>
+                    <ion-text>
+                      {{project?.description}}
+                    </ion-text>
+                  </ion-item>
+                  <ion-item lines="none">
+                    <ion-buttons>
+                      <ion-button color="primary">Add Task</ion-button>
+                      <ion-button color="primary">Task Board</ion-button>
+                      <ion-button color="primary">Edit</ion-button>
+                    </ion-buttons>
+                  </ion-item>
+                </ion-list>
+              </ion-accordion>
+            </ion-accordion-group>
+          </ion-card-header>
+        </ion-card>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option>Details</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
+
+
+  <div *ngIf="!projectList">
+    <ion-list>
+      <ion-item *ngFor="let n of numSequence(10);let i = index;">
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+  </div>
+
+
+
 </ion-content>
